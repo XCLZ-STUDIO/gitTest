@@ -37,5 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         textMessage.text = "小涂到此一游"
         Toast.makeText(this, "XCLZ STUDIO", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "哼哼", Toast.LENGTH_LONG).show()
     }
 }
