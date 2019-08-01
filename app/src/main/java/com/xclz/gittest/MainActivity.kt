@@ -33,5 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        textMessage.text = "小涂到此一游"
     }
 }
