@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,12 +30,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
 
-        nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        //nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        message.text = "小涂到此一游"
-        toast("XCLZ STUDIO")
-        toast("哼哼")
+        verticalLayout {
+            padding = dip(30)
+            editText {
+                hint = "Name"
+                textSize = 24f
+            }
+            editText {
+                hint = "Password"
+                textSize = 24f
+            }
+            button("Login") {
+                textSize = 26f
+                onClick {  vibrator.vibrate(200) }
+
+                //vibrator.vibrate(VibrationEffect.createOneShot(200, 100))
+            }
+        }
+
+
+//        message.text = "小涂到此一游"
+//        toast("XCLZ STUDIO")
+//        toast("哼哼")
+
     }
 }
