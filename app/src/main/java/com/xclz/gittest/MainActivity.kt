@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        textMessage.text = "小涂到此一游~~~"
+        textMessage.text = "小涂到此一游!!!"
         Toast.makeText(this, "XCLZ STUDIO", Toast.LENGTH_LONG).show()
         Toast.makeText(this, "哼哼", Toast.LENGTH_LONG).show()
     }
