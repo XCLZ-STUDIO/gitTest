@@ -3,12 +3,18 @@ package com.xclz.gittest
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        init {
+            System.loadLibrary("hello")
+        }
+    }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -36,6 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         verticalLayout {
             padding = dip(30)
+            textView {
+                text = stringFromJNI()
+                textSize = 36f
+            }
             editText {
                 hint = "Name"
                 textSize = 24f
@@ -51,11 +61,10 @@ class MainActivity : AppCompatActivity() {
                 //vibrator.vibrate(VibrationEffect.createOneShot(200, 100))
             }
         }
-
-
 //        message.text = "小涂到此一游"
 //        toast("XCLZ STUDIO")
 //        toast("哼哼")
 
     }
+    external fun stringFromJNI(): String
 }
